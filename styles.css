@@ -1,0 +1,159 @@
+/* ---------- RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- BODY ---------- */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+}
+
+/* ---------- MAIN CARD ---------- */
+.container {
+    width: 100%;
+    max-width: 480px;
+    background: #111827;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- TITLE ---------- */
+.container h1 {
+    text-align: center;
+    color: #f9fafb;
+    font-size: 2.4rem;
+    margin-bottom: 28px;
+    letter-spacing: 1px;
+}
+
+/* ---------- INPUT AREA ---------- */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+/* Input field */
+#taskInput {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 1rem;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    background-color: #1f2933;
+    color: #f9fafb;
+}
+
+#taskInput::placeholder {
+    color: #9ca3af;
+}
+
+#taskInput:focus {
+    outline: 2px solid #7c3aed;
+}
+
+/* Add button */
+.input-container button {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #7c3aed, #9333ea);
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.input-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(124, 58, 237, 0.4);
+}
+
+/* ---------- TASK LIST ---------- */
+#taskList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Task item */
+#taskList li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1f2933;
+    padding: 14px 16px;
+    border-radius: 14px;
+    color: #f9fafb;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Task text */
+#taskList li span {
+    flex: 1;
+    margin-right: 12px;
+    font-size: 1rem;
+}
+
+/* Completed task */
+.completed {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+/* Complete button */
+#taskList li button {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: #22c55e;
+    transition: transform 0.2s;
+}
+
+#taskList li button:hover {
+    transform: scale(1.2);
+}
+
+/* Remove button */
+.remove-btn {
+    margin-left: 10px;
+    background: #ef4444;
+    border: none;
+    border-radius: 10px;
+    padding: 6px 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.remove-btn:hover {
+    background: #dc2626;
+    transform: scale(1.05);
+}
+
+/* ---------- ANIMATION ---------- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
